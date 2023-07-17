@@ -1,27 +1,24 @@
 "use strict";
 // A nice, easy to use, timer, that provides powerful features
-// Made with ❤️ by Gaskam -> Gaskam.dev
-// Version: 0.1.8 Alpha
+// Made with ❤️ by Gaskam -> Gaskam.com
+// Version: 0.2.1 Alpha
 // Released: Event gestionnary
 // TODO: Timing events triggering (on the fly)
+var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+};
+var _Timer_instances, _Timer_currentTimeout, _Timer_specialEvents, _Timer_timelineInsert, _Timer_registerEvent, _Timer_unregisterEvent, _Timer_registerAllEvents;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Timer = void 0;
 class Timer {
-    beginTime = null;
-    pauseAmount = 0;
-    pauseBegin = null;
-    paused = true;
-    callbacks = [];
-    _timeline = [];
-    specialEventsRegistry = [];
-    #currentTimeout = -1;
-    duration;
-    #specialEvents = {
-        start: [],
-        stop: [],
-        end: [],
-        reset: [],
-    };
     // Works fine, but rounds time down(1999ms -> 1s)
     /**
      * Function to help you format time
@@ -152,6 +149,21 @@ class Timer {
      * @param duration - The duration of the timer, in ms
      */
     constructor(duration) {
+        _Timer_instances.add(this);
+        this.beginTime = null;
+        this.pauseAmount = 0;
+        this.pauseBegin = null;
+        this.paused = true;
+        this.callbacks = [];
+        this._timeline = [];
+        this.specialEventsRegistry = [];
+        _Timer_currentTimeout.set(this, -1);
+        _Timer_specialEvents.set(this, {
+            start: [],
+            stop: [],
+            end: [],
+            reset: [],
+        });
         this.duration = duration;
     }
     // Timer length functions
@@ -200,6 +212,9 @@ class Timer {
     get timeLeft() {
         return this.duration - this.runningTime;
     }
+    get ended() {
+        return this.timeLeft < 1;
+    }
     /**
      * Starts the timer.
      * Triggers the onStart event.
@@ -214,8 +229,8 @@ class Timer {
                 this._timeline.forEach(function (tmp) {
                     tmp[0] += tmp2 - tmp1;
                 });
-                this.checkEvents();
             }
+            this.checkEvents();
             this.dispatchSpecialEvent("start");
             return true;
         }
@@ -246,7 +261,7 @@ class Timer {
         this.pauseAmount = 0;
         this.paused = true;
         this.beginTime = null;
-        this.#registerAllEvents();
+        __classPrivateFieldGet(this, _Timer_instances, "m", _Timer_registerAllEvents).call(this);
         this.dispatchSpecialEvent("reset");
     }
     // Special Events functions
@@ -254,50 +269,50 @@ class Timer {
      * Add a callback to the onStart event, you may add multiple ones
      */
     set onStart(callback) {
-        this.#specialEvents.start.push(callback);
+        __classPrivateFieldGet(this, _Timer_specialEvents, "f").start.push(callback);
     }
     /**
      * Add a callback to the onStop event, you may add multiple ones
      */
     set onStop(callback) {
-        this.#specialEvents.stop.push(callback);
+        __classPrivateFieldGet(this, _Timer_specialEvents, "f").stop.push(callback);
     }
     /**
      * Add a callback to the onReset event, you may add multiple ones
      */
     set onEnd(callback) {
-        this.#specialEvents.end.push(callback);
+        __classPrivateFieldGet(this, _Timer_specialEvents, "f").end.push(callback);
     }
     /**
      * Add a callback to the onReset event, you may add multiple ones
      */
     set onReset(callback) {
-        this.#specialEvents.reset.push(callback);
+        __classPrivateFieldGet(this, _Timer_specialEvents, "f").reset.push(callback);
     }
     /**
      * Dispatches one of the special events
      * @param event - The event to dispatch
      */
     dispatchSpecialEvent(event) {
-        this.#specialEvents[event].forEach((el) => el());
+        __classPrivateFieldGet(this, _Timer_specialEvents, "f")[event].forEach((el) => el());
     }
     /**
      * Destroys all the callbacks of a special event
      * @param event - The event type to destroy
      */
     destroySpecialEvent(event) {
-        this.#specialEvents[event] = [];
+        __classPrivateFieldGet(this, _Timer_specialEvents, "f")[event] = [];
     }
     /**
      * Destroys all the callbacks of all the special events
      */
     destroyAllSpecialEvents() {
-        this.#specialEvents = {
+        __classPrivateFieldSet(this, _Timer_specialEvents, {
             start: [],
             stop: [],
             reset: [],
             end: []
-        };
+        }, "f");
     }
     // Callbacks functions
     /**
@@ -306,7 +321,7 @@ class Timer {
      * @param callback - The callback to trigger
      */
     addEventListener(event, callback) {
-        this.#registerEvent(event);
+        __classPrivateFieldGet(this, _Timer_instances, "m", _Timer_registerEvent).call(this, event);
         this.callbacks.push([event, callback]);
         this.checkEvents();
     }
@@ -316,7 +331,7 @@ class Timer {
      */
     removeEventListener(event) {
         this.callbacks = this.callbacks.filter((el) => el[0] != event);
-        this.#unregisterEvent(event);
+        __classPrivateFieldGet(this, _Timer_instances, "m", _Timer_unregisterEvent).call(this, event);
     }
     /**
      * Triggers all the callbacks of a specific time interval
@@ -333,66 +348,75 @@ class Timer {
         });
         return tmp;
     }
-    // Events registering functions
-    // That looks fine
-    #timelineInsert(date, name) {
-        let i = 0;
-        try {
-            while (date >= this._timeline[i][0]) {
-                if (name === this._timeline[i][1])
-                    break;
-                i++;
-            }
-        }
-        catch (e) {
-            i = this._timeline.length;
-        }
-        this._timeline.splice(i, 0, [date, name]);
-    }
-    #registerEvent(event) {
-        if (Array.isArray(event))
-            event = event[0];
-        if (event > 0) {
-            let tmp = Date.now();
-            let nextTime = (this.timeLeft % event) + tmp;
-            if (nextTime == tmp)
-                nextTime = event + tmp;
-            this.#timelineInsert(nextTime, event);
-            return true;
-        }
-        return false;
-    }
-    #unregisterEvent(event) {
-        if (Array.isArray(event))
-            event = event[0];
-        if (event > 0) {
-            this._timeline = this._timeline.filter(tmp => tmp[1] !== event);
-            return true;
-        }
-        return false;
-    }
-    #registerAllEvents() {
-        this._timeline = [];
-        this.callbacks.forEach((tmp) => {
-            this.#registerEvent(tmp[0]);
-        });
-    }
     // Events
     checkEvents() {
-        if (this.paused != true) {
+        if (this.ended)
+            this.timerEndRoutine();
+        else if (this.paused != true) {
             while (this._timeline.length && this._timeline[0][0] <= Date.now()) {
                 this.dispatchEvent(this._timeline[0][1]);
                 let tmp = this._timeline.shift();
-                this.#registerEvent(tmp[1]);
+                __classPrivateFieldGet(this, _Timer_instances, "m", _Timer_registerEvent).call(this, tmp[1]);
             }
             if (this.timeLeft <= 0) {
                 this.stop();
                 return;
             }
-            clearTimeout(this.#currentTimeout);
+            clearTimeout(__classPrivateFieldGet(this, _Timer_currentTimeout, "f"));
             if (this._timeline.length)
-                this.#currentTimeout = setTimeout(this.checkEvents.bind(this), this._timeline[0][0] - Date.now());
+                __classPrivateFieldSet(this, _Timer_currentTimeout, setTimeout(this.checkEvents.bind(this), this._timeline[0][0] - Date.now()), "f");
+            else
+                __classPrivateFieldSet(this, _Timer_currentTimeout, setTimeout(this.checkEvents.bind(this), this.timeLeft), "f");
         }
+    }
+    timerEndRoutine() {
+        this.stop();
+        this.callbacks.forEach((event) => {
+            event[1]();
+        });
+        this.dispatchSpecialEvent("end");
     }
 }
 exports.Timer = Timer;
+_Timer_currentTimeout = new WeakMap(), _Timer_specialEvents = new WeakMap(), _Timer_instances = new WeakSet(), _Timer_timelineInsert = function _Timer_timelineInsert(date, name) {
+    let i = 0;
+    try {
+        while (date >= this._timeline[i][0]) {
+            if (name === this._timeline[i][1])
+                break;
+            i++;
+        }
+    }
+    catch (e) {
+        i = this._timeline.length;
+    }
+    this._timeline.splice(i, 0, [date, name]);
+}, _Timer_registerEvent = function _Timer_registerEvent(event) {
+    if (Array.isArray(event))
+        event = event[0];
+    if (event > 0) {
+        let now = Date.now();
+        let timeLeft = this.timeLeft;
+        let nextTime = (timeLeft % event) + now;
+        if (nextTime == now)
+            nextTime = event + now;
+        if ((timeLeft + nextTime - now) >= now + this.duration)
+            return false;
+        __classPrivateFieldGet(this, _Timer_instances, "m", _Timer_timelineInsert).call(this, nextTime, event);
+        return true;
+    }
+    return false;
+}, _Timer_unregisterEvent = function _Timer_unregisterEvent(event) {
+    if (Array.isArray(event))
+        event = event[0];
+    if (event > 0) {
+        this._timeline = this._timeline.filter(tmp => tmp[1] !== event);
+        return true;
+    }
+    return false;
+}, _Timer_registerAllEvents = function _Timer_registerAllEvents() {
+    this._timeline = [];
+    this.callbacks.forEach((tmp) => {
+        __classPrivateFieldGet(this, _Timer_instances, "m", _Timer_registerEvent).call(this, tmp[0]);
+    });
+};

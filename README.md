@@ -11,6 +11,8 @@
 
 Dev Timer is a very simple library to help you implement timings in your code. It's designed to stay precise over time.
 
+> ⚠️ This library is currently in Alpha release, it contains a lot of known bugs. Expect many breaking changes. (You should target a specific version)
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -22,16 +24,31 @@ Dev Timer is a very simple library to help you implement timings in your code. I
 
 You can easely install it using the command below :
 
+> ⚠️ This library is not yet compatible with imports with script tag.
+
 ### npm
 
 ```
 npm i dev-timer
 ```
 
-### UNPKG
-
+NodeJS usage
 ```js
-import { Timer } from "https://unpkg.com/dev-timer@0.1.9/dist/Timer.js"
+const { Timer } = require("dev-timer");
+```
+
+### ESM
+
+Dev Timer can be imported as ES modules for browsers that support it. The specifics differ depending on the CDN, but here's a pattern for including the ES module where supported, and falling back to a UMD version for older browsers.
+
+HTML5
+```html
+<script type="module" src="index.js"></script>
+```
+
+JS ( index.js )
+```js
+import { Timer } from "https://unpkg.com/dev-timer@0.2.10/ES/Timer.js";
 ```
 
 ## Usage

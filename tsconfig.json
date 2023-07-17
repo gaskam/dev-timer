@@ -2,10 +2,10 @@
   "strict": true,
   "compilerOptions": {
     "lib": ["ES2021", "DOM"],
-    "module": "Node16",
-    "target": "ESNext",
+    "module": "ESNext",
+    "target": "ES2018",
     "declaration": true,
-    "outDir": "./dist",
+    "outDir": "./ES",
   },
   "include": [
     "src/**/*"

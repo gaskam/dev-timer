@@ -1,11 +1,17 @@
 {
   "name": "dev-timer",
-  "version": "0.2.0",
+  "version": "0.2.10",
   "description": "Super interval timer that can handle multiple timers simulteanously",
   "main": "dist/Timer.js",
   "types": "dist/Timer.d.ts",
+  "scripts": {
+    "export": "npm run node && npm run ES",
+    "node": "tsc --module node16 --outDir ./dist",
+    "ES": "tsc"
+  },
   "files": [
-    "/dist"
+    "/dist",
+    "/ES"
   ],
   "repository": {
     "type": "git",
