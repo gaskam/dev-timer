@@ -9,7 +9,7 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/BOT-maKeR-0000/dev-timer)
 ![NPM](https://img.shields.io/npm/l/dev-timer)
 
-Dev Timer is a very simple library to help you inplement timings in your code. It's designed to stay precise over time.
+Dev Timer is a very simple library to help you implement timings in your code. It's designed to stay precise over time.
 
 ## Table of Contents
 
@@ -22,8 +22,16 @@ Dev Timer is a very simple library to help you inplement timings in your code. I
 
 You can easely install it using the command below :
 
-```console
+### npm
+
+```
 npm i dev-timer
+```
+
+### UNPKG
+
+```js
+import { Timer } from "https://unpkg.com/dev-timer@0.1.9/dist/Timer.js"
 ```
 
 ## Usage
