@@ -1,0 +1,25 @@
+{
+  "name": "dev-timer",
+  "version": "0.1.9",
+  "description": "Super interval timer that can handle multiple timers simulteanously",
+  "main": "dist/Timer.js",
+  "types": "dist/Timer.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "unset"
+  },
+  "keywords": [
+    "timer",
+    "js",
+    "timerjs",
+    "interval"
+  ],
+  "author": "Gaskam.dev https://www.github.com/Gaskam/",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "dev-timer": "^0.1.9"
+  }
+}
