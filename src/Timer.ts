@@ -172,7 +172,7 @@ export class Timer {
     }
 
     /**
-     * Add a duration to the running time of the timer, or removes it if the duration is negative
+     * Add a duration to the running time of the timer, or removes it if the provided duration is negative
      * @param duration - The duration to add to the running time of the timer, in ms
      */
     addRunningTime(duration: number): void {

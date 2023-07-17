@@ -10,5 +10,5 @@ const timer = new Timer(30000);
 timer.start(); // Start the timer
 
 timer.addEventListener(1000, ()=>{
-    console.log(`Time left: ${timer.formatTime(timer.timeLeft, 'sss')}`);
+    console.log(`Time left: ${timer.formatTime(timer.timeLeft, 'ss.mss')}`);
 });
