@@ -37,12 +37,12 @@ import { Timer } from "https://unpkg.com/dev-timer@0.1.9/dist/Timer.js"
 ## Usage
 
 You can find the documentation [here](https://github.com/BOT-maKeR-0000/dev-timer/wiki).
-To find more examples, please refer to [examples folder](https://github.com/BOT-maKeR-0000/dev-timer/tree/main/examples).
+To find more examples, please refer to [examples folder](https://github.com/BOT-maKeR-0000/dev-timer/tree/main/examples) or [step by step examples](https://github.com/BOT-maKeR-0000/dev-timer/wiki/examples).
 
 ### Basic Example :
 
 ```js
-const Timer = require('dev-timer').default;
+const { Timer } = require('dev-timer');
 
 // Create a new timer instance with a 15 seconds duration
 const timer = new Timer(15000); 
