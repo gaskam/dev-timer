@@ -1,6 +1,6 @@
 // A nice, easy to use, timer, that provides powerful features
 // Made with ❤️ by Gaskam -> Gaskam.dev
-// Version: 0.1.8 Alpha
+// Version: 0.2.0 Alpha
 // Released: Event gestionnary
 // TODO: Timing events triggering (on the fly)
 
@@ -195,6 +195,10 @@ export class Timer {
         return this.duration - this.runningTime;
     }
 
+    get ended(): boolean {
+        return this.timeLeft < 1;
+    }
+
     /**
      * Starts the timer.
      * Triggers the onStart event.
@@ -209,8 +213,8 @@ export class Timer {
                 this._timeline.forEach(function (tmp) {
                     tmp[0] += tmp2 - tmp1;
                 });
-                this.checkEvents();
             }
+            this.checkEvents();
             this.dispatchSpecialEvent("start");
             return true;
         }
@@ -361,9 +365,11 @@ export class Timer {
     #registerEvent(event: number[] | number): boolean {
         if (Array.isArray(event)) event = event[0];
         if (event > 0) {
-            let tmp = Date.now();
-            let nextTime = (this.timeLeft % event) + tmp;
-            if (nextTime == tmp) nextTime = event + tmp;
+            let now = Date.now();
+            let timeLeft = this.timeLeft;
+            let nextTime = (timeLeft % event) + now;
+            if (nextTime == now) nextTime = event + now;
+            if ((timeLeft + nextTime - now) >= now + this.duration) return false;
             this.#timelineInsert(nextTime, event);
             return true;
         }
@@ -388,7 +394,8 @@ export class Timer {
 
     // Events
     checkEvents(): void {
-        if (this.paused != true) {
+        if (this.ended) this.timerEndRoutine();
+        else if (this.paused != true) {
             while (this._timeline.length && this._timeline[0][0] <= Date.now()) {
                 this.dispatchEvent(this._timeline[0][1]);
                 let tmp = this._timeline.shift();
@@ -401,8 +408,16 @@ export class Timer {
 
             clearTimeout(this.#currentTimeout);
             if (this._timeline.length) this.#currentTimeout = setTimeout(this.checkEvents.bind(this), this._timeline[0][0] - Date.now());
+            else this.#currentTimeout = setTimeout(this.checkEvents.bind(this), this.timeLeft);
 
         }
     }
 
+    timerEndRoutine(): void {
+        this.stop();
+        this.callbacks.forEach((event) => {
+            event[1]();
+        });
+        this.dispatchSpecialEvent("end");
+    }
 }
