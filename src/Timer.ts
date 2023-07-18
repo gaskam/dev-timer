@@ -22,7 +22,6 @@ export class Timer {
     paused = true;
     callbacks: event[] = [];
     _timeline: Array<[number, number]> = [];
-    specialEventsRegistry = [];
     #currentTimeout: number = -1;
     duration: number;
 
