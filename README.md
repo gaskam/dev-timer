@@ -48,7 +48,7 @@ HTML5
 
 JS ( index.js )
 ```js
-import { Timer } from "https://unpkg.com/dev-timer@0.2.10/ES/Timer.js";
+import { Timer } from "https://unpkg.com/dev-timer@0.3.0/ES/Timer.js";
 ```
 
 ## Usage

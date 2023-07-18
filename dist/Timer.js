@@ -1,7 +1,7 @@
 "use strict";
 // A nice, easy to use, timer, that provides powerful features
 // Made with ❤️ by Gaskam -> Gaskam.com
-// Version: 0.2.1 Alpha
+// Version: 0.3.0 Alpha
 // Released: Event gestionnary
 // TODO: Timing events triggering (on the fly)
 var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
