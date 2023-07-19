@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/BOT-maKeR-0000/dev-timer"
+    "url": "https://github.com/gaskam-com/dev-timer"
   },
   "keywords": [
     "timer",
@@ -24,7 +24,7 @@
     "timerjs",
     "interval"
   ],
-  "author": "Gaskam.com",
+  "author": "Gaskam",
   "license": "BSD-3-Clause",
   "devDependencies": {
     "typedoc": "^0.24.8",

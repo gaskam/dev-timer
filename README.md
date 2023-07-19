@@ -22,7 +22,7 @@ Dev Timer is a very simple library to help you implement timings in your code. I
 
 ## Installation
 
-You can easely install it using the command below :
+You can easily install it using the command below :
 
 > ⚠️ This library is not yet compatible with imports with script tag.
 
