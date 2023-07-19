@@ -5,10 +5,7 @@
   "main": "dist/Timer.js",
   "types": "dist/Timer.d.ts",
   "scripts": {
-    "export": "npm run node && npm run ES",
-    "node": "tsc --module node16 --outDir ./dist",
-    "ES": "tsc",
-    "Doc": "npx typedoc --plugin typedoc-plugin-markdown --out docs src/Timer.ts"
+    "build": "tsc --module commonjs --outDir ./dist && tsc && npx typedoc --plugin typedoc-plugin-markdown --out docs src/Timer.ts"
   },
   "files": [
     "/dist",
