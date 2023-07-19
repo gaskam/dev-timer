@@ -1,11 +1,14 @@
 {
   "name": "dev-timer",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "Super interval timer that can handle multiple timers simulteanously",
   "main": "dist/Timer.js",
   "types": "dist/Timer.d.ts",
   "scripts": {
-    "build": "tsc --module commonjs --outDir ./dist && tsc && npx typedoc --plugin typedoc-plugin-markdown --out docs src/Timer.ts"
+    "build": "tsc --module commonjs --outDir ./dist && tsc && npx typedoc --plugin typedoc-plugin-markdown --out docs src/Timer.ts",
+    "release:major": "npm version major --no-git-tag-version",
+    "release:minor": "npm version minor --no-git-tag-version",
+    "release:patch": "npm version patch --no-git-tag-version"
   },
   "files": [
     "/dist",

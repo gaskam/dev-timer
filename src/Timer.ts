@@ -1,10 +1,5 @@
 // A nice, easy to use, timer, that provides powerful features
 // Made with ❤️ by Gaskam -> Gaskam.com
-// Version: 0.3.0 Alpha
-// Released: Event gestionnary
-// TODO: Timing events triggering (on the fly)
-
-
 
 type _specialEvents = {
     start: Function[],
