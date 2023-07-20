@@ -1,6 +1,6 @@
-# Dev-Timer
+<h1 align="center">Dev-Timer</h1>
 
-<div style="align: center;">
+<div align="center" markdown="1">
 
 ![npm](https://img.shields.io/npm/v/dev-timer)
 ![npm](https://img.shields.io/npm/dw/dev-timer)
@@ -11,7 +11,9 @@
 
 </div>
 
-Dev Timer is a very simple library to help you implement timings in your code. It's designed to stay precise over time.
+<h4 align="center">Dev Timer is a very simple library to help you implement timings in your code.</h3>
+
+---
 
 > ⚠️ This library is currently in Alpha release, it contains a lot of known bugs. Expect many breaking changes. (You should target a specific version)
 
