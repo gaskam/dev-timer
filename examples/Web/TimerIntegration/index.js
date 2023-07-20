@@ -1,6 +1,8 @@
 import { Timer } from "../../../ES/Timer.js";
 
-const timer = new Timer(20000);
+const duration = 20000;
+
+const timer = new Timer(duration);
 
 window.onload = () => {
     // Get the display elements for the timer
@@ -29,7 +31,7 @@ window.onload = () => {
     });
 
     reset.addEventListener("click", () => {
-        timer.reset();
+        timer.setRunningTime(0);
         updateTimer();
     });
 
