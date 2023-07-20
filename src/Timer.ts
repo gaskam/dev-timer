@@ -87,8 +87,9 @@ export class Timer {
         }
         if (format.includes("ms")) {
             let tmp: any = Math.floor(time);
-            if (tmp < 100) tmp = "00" + tmp;
-            else if (tmp < 10) tmp = "0" + tmp;
+            if (tmp < 100) tmp = "0" + tmp;
+            else if (tmp < 10) tmp = "00" + tmp;
+            else if (tmp < 1) tmp = "000";
             format = format.replace("ms", tmp);
         }
         return format;
