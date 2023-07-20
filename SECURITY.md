@@ -7,6 +7,7 @@ Please consider the risks before downloading the library.
 
 | Version  | Supported          |
 | -------- | ------------------ |
+| <= 0.4.0 | ✔️ Beta
 | >= 0.3.0 | ⚠️ Alpha           |
 | < 0.3.0  | ❌                 |
 

@@ -1,17 +1,21 @@
-# Dev-Timer
+<h1 align="center">Dev-Timer</h1>
+
+<div align="center" markdown="1">
 
 ![npm](https://img.shields.io/npm/v/dev-timer)
-![GitHub top language](https://img.shields.io/github/languages/top/BOT-maKeR-0000/dev-timer)
 ![npm](https://img.shields.io/npm/dw/dev-timer)
+
 ![npm bundle size](https://img.shields.io/bundlephobia/min/dev-timer)
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/BOT-maKeR-0000/dev-timer/main)
-![GitHub issues](https://img.shields.io/github/issues/BOT-maKeR-0000/dev-timer)
-![GitHub Repo stars](https://img.shields.io/github/stars/BOT-maKeR-0000/dev-timer)
-![NPM](https://img.shields.io/npm/l/dev-timer)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/gaskam-com/dev-timer/main)
+![Static Badge](https://img.shields.io/badge/JS%20%2B%20TS-%20100%25-blue)
 
-Dev Timer is a very simple library to help you implement timings in your code. It's designed to stay precise over time.
+</div>
 
-> ⚠️ This library is currently in Alpha release, it contains a lot of known bugs. Expect many breaking changes. (You should target a specific version)
+<h4 align="center">Dev Timer is a very simple library to help you implement timings in your code.</h3>
+
+---
+
+> ⚠️ This library is currently in Beta release. Expect changes.
 
 ## Table of Contents
 
@@ -48,7 +52,7 @@ HTML5
 
 JS ( index.js )
 ```js
-import { Timer } from "https://unpkg.com/dev-timer@0.3.0/ES/Timer.js";
+import { Timer } from "https://unpkg.com/dev-timer@0.4.0/ES/Timer.js";
 ```
 
 ## Usage

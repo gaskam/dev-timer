@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body {
+	background: #1f1f1f;
+	margin: 0;padding: 0;
+	font-family: 'Source Code Pro', monospace;
+}
+
+.timerSeconds {
+	font-size: 2em;
+	margin: 1em;
+	color: #F5F5F5;
+	text-align: center;
+}
+
+.timer__buttons {
+	text-align: center;
+}
+
+.timer__buttons button {
+	font-size: 1em;
+	border: 1px solid #F5F5F5;
+	border-radius: 1em;
+	padding: 0.5em 1em 0.5em 1em;
+	background: transparent;
+	color: #F5F5F5;
+}
+
+.timer__buttons button:hover {
+	background: #F5F5F5;
+	color: #1F1F1F;
+}
