@@ -7,7 +7,6 @@ export declare class Timer {
     paused: boolean;
     callbacks: event[];
     _timeline: Array<[number, number]>;
-    specialEventsRegistry: any[];
     duration: number;
     /**
      * Function to help you format time
@@ -15,6 +14,7 @@ export declare class Timer {
      * @param format - The format, accepted formats are: 'ms', 'ss', 'mm', 'hh', 'dd', 'ww', 'mo', 'yy', 'yyyy', and you may use multiple formats at once, for example: 'hh:mm:ss'
      * @returns The formatted time
      */
+    static formatTime(time: number, format?: string): string;
     formatTime(time: number, format?: string): string;
     /**
      * Ensures that the time is in ms, and if not, converts it to ms
@@ -22,6 +22,7 @@ export declare class Timer {
      * @throws {Error} If the time string is not in the correct format
      * @returns The time converted to ms
      */
+    static toMs(time: number | string): number;
     toMs(time: number | string): number;
     /**
      * Create a new Timer with a duration
@@ -45,7 +46,7 @@ export declare class Timer {
      */
     setRunningTime(duration: number): void;
     /**
-     * Add a duration to the running time of the timer, or removes it if the duration is negative
+     * Add a duration to the running time of the timer, or removes it if the provided duration is negative
      * @param duration - The duration to add to the running time of the timer, in ms
      */
     addRunningTime(duration: number): void;

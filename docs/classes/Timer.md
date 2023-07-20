@@ -53,6 +53,8 @@
 - [stop](Timer.md#stop)
 - [timerEndRoutine](Timer.md#timerendroutine)
 - [toMs](Timer.md#toms)
+- [formatTime](Timer.md#formattime-1)
+- [toMs](Timer.md#toms-1)
 
 ## Constructors
 
@@ -70,7 +72,7 @@ Create a new Timer with a duration
 
 #### Defined in
 
-[Timer.ts:142](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L142)
+[Timer.ts:146](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L146)
 
 ## Properties
 
@@ -80,7 +82,7 @@ Create a new Timer with a duration
 
 #### Defined in
 
-[Timer.ts:25](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L25)
+[Timer.ts:20](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L20)
 
 ___
 
@@ -90,7 +92,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:28](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L28)
+[Timer.ts:23](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L23)
 
 ___
 
@@ -100,7 +102,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:24](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L24)
+[Timer.ts:19](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L19)
 
 ___
 
@@ -110,7 +112,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:19](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L19)
+[Timer.ts:14](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L14)
 
 ___
 
@@ -120,7 +122,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:23](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L23)
+[Timer.ts:18](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L18)
 
 ___
 
@@ -130,7 +132,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:26](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L26)
+[Timer.ts:21](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L21)
 
 ___
 
@@ -140,7 +142,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:20](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L20)
+[Timer.ts:15](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L15)
 
 ___
 
@@ -150,7 +152,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:21](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L21)
+[Timer.ts:16](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L16)
 
 ___
 
@@ -160,7 +162,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:22](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L22)
+[Timer.ts:17](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L17)
 
 ## Accessors
 
@@ -174,7 +176,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:197](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L197)
+[Timer.ts:201](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L201)
 
 ___
 
@@ -196,7 +198,7 @@ Add a callback to the onReset event, you may add multiple ones
 
 #### Defined in
 
-[Timer.ts:272](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L272)
+[Timer.ts:276](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L276)
 
 ___
 
@@ -218,7 +220,7 @@ Add a callback to the onReset event, you may add multiple ones
 
 #### Defined in
 
-[Timer.ts:279](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L279)
+[Timer.ts:283](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L283)
 
 ___
 
@@ -240,7 +242,7 @@ Add a callback to the onStart event, you may add multiple ones
 
 #### Defined in
 
-[Timer.ts:258](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L258)
+[Timer.ts:262](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L262)
 
 ___
 
@@ -262,7 +264,7 @@ Add a callback to the onStop event, you may add multiple ones
 
 #### Defined in
 
-[Timer.ts:265](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L265)
+[Timer.ts:269](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L269)
 
 ___
 
@@ -278,7 +280,7 @@ Gives the current running time of the timer
 
 #### Defined in
 
-[Timer.ts:185](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L185)
+[Timer.ts:189](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L189)
 
 ___
 
@@ -294,7 +296,7 @@ Gives the current time left of the timer
 
 #### Defined in
 
-[Timer.ts:193](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L193)
+[Timer.ts:197](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L197)
 
 ## Methods
 
@@ -308,7 +310,7 @@ Gives the current time left of the timer
 
 #### Defined in
 
-[Timer.ts:387](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L387)
+[Timer.ts:391](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L391)
 
 ___
 
@@ -328,7 +330,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:364](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L364)
+[Timer.ts:368](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L368)
 
 ___
 
@@ -349,7 +351,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:351](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L351)
+[Timer.ts:355](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L355)
 
 ___
 
@@ -369,7 +371,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:378](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L378)
+[Timer.ts:382](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L382)
 
 ___
 
@@ -391,7 +393,7 @@ Add a duration to the timer duration, or removes it if the duration is negative
 
 #### Defined in
 
-[Timer.ts:160](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L160)
+[Timer.ts:164](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L164)
 
 ___
 
@@ -414,7 +416,7 @@ Add an event listener, to trigger at a specific interval of time
 
 #### Defined in
 
-[Timer.ts:317](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L317)
+[Timer.ts:321](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L321)
 
 ___
 
@@ -436,7 +438,7 @@ Add a duration to the running time of the timer, or removes it if the provided d
 
 #### Defined in
 
-[Timer.ts:177](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L177)
+[Timer.ts:181](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L181)
 
 ___
 
@@ -450,7 +452,7 @@ ___
 
 #### Defined in
 
-[Timer.ts:395](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L395)
+[Timer.ts:399](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L399)
 
 ___
 
@@ -466,7 +468,7 @@ Destroys all the callbacks of all the special events
 
 #### Defined in
 
-[Timer.ts:302](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L302)
+[Timer.ts:306](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L306)
 
 ___
 
@@ -488,7 +490,7 @@ Destroys all the callbacks of a special event
 
 #### Defined in
 
-[Timer.ts:295](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L295)
+[Timer.ts:299](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L299)
 
 ___
 
@@ -512,7 +514,7 @@ The amount of callbacks triggered
 
 #### Defined in
 
-[Timer.ts:337](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L337)
+[Timer.ts:341](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L341)
 
 ___
 
@@ -534,7 +536,7 @@ Dispatches one of the special events
 
 #### Defined in
 
-[Timer.ts:287](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L287)
+[Timer.ts:291](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L291)
 
 ___
 
@@ -542,24 +544,20 @@ ___
 
 ▸ **formatTime**(`time`, `format?`): `string`
 
-Function to help you format time
-
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `time` | `number` | A time in ms |
-| `format?` | `string` | The format, accepted formats are: 'ms', 'ss', 'mm', 'hh', 'dd', 'ww', 'mo', 'yy', 'yyyy', and you may use multiple formats at once, for example: 'hh:mm:ss' |
+| Name | Type |
+| :------ | :------ |
+| `time` | `number` |
+| `format?` | `string` |
 
 #### Returns
 
 `string`
 
-The formatted time
-
 #### Defined in
 
-[Timer.ts:43](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L43)
+[Timer.ts:98](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L98)
 
 ___
 
@@ -581,7 +579,7 @@ Removes all the callbacks of a specific time interval
 
 #### Defined in
 
-[Timer.ts:327](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L327)
+[Timer.ts:331](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L331)
 
 ___
 
@@ -599,7 +597,7 @@ Trigger the onReset event.
 
 #### Defined in
 
-[Timer.ts:245](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L245)
+[Timer.ts:249](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L249)
 
 ___
 
@@ -621,7 +619,7 @@ Set the duration of the timer
 
 #### Defined in
 
-[Timer.ts:152](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L152)
+[Timer.ts:156](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L156)
 
 ___
 
@@ -643,7 +641,7 @@ Sets the running time of the timer(overrides the current running time)
 
 #### Defined in
 
-[Timer.ts:168](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L168)
+[Timer.ts:172](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L172)
 
 ___
 
@@ -662,7 +660,7 @@ Returns true if the timer was paused, false if not
 
 #### Defined in
 
-[Timer.ts:206](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L206)
+[Timer.ts:210](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L210)
 
 ___
 
@@ -681,7 +679,7 @@ Returns true if the timer was running, false if not
 
 #### Defined in
 
-[Timer.ts:228](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L228)
+[Timer.ts:232](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L232)
 
 ___
 
@@ -695,13 +693,58 @@ ___
 
 #### Defined in
 
-[Timer.ts:415](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L415)
+[Timer.ts:419](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L419)
 
 ___
 
 ### toMs
 
 ▸ **toMs**(`time`): `number`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `time` | `string` \| `number` |
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+[Timer.ts:137](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L137)
+
+___
+
+### formatTime
+
+▸ `Static` **formatTime**(`time`, `format?`): `string`
+
+Function to help you format time
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `time` | `number` | A time in ms |
+| `format?` | `string` | The format, accepted formats are: 'ms', 'ss', 'mm', 'hh', 'dd', 'ww', 'mo', 'yy', 'yyyy', and you may use multiple formats at once, for example: 'hh:mm:ss' |
+
+#### Returns
+
+`string`
+
+The formatted time
+
+#### Defined in
+
+[Timer.ts:38](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L38)
+
+___
+
+### toMs
+
+▸ `Static` **toMs**(`time`): `number`
 
 Ensures that the time is in ms, and if not, converts it to ms
 
@@ -723,4 +766,4 @@ The time converted to ms
 
 #### Defined in
 
-[Timer.ts:109](https://github.com/BOT-maKeR-0000/timer-ts/blob/9ebcb74/src/Timer.ts#L109)
+[Timer.ts:109](https://github.com/BOT-maKeR-0000/timer-ts/blob/2a85757/src/Timer.ts#L109)

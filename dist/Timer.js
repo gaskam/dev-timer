@@ -1,9 +1,6 @@
 "use strict";
 // A nice, easy to use, timer, that provides powerful features
 // Made with ❤️ by Gaskam -> Gaskam.com
-// Version: 0.3.0 Alpha
-// Released: Event gestionnary
-// TODO: Timing events triggering (on the fly)
 var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
@@ -26,7 +23,7 @@ class Timer {
      * @param format - The format, accepted formats are: 'ms', 'ss', 'mm', 'hh', 'dd', 'ww', 'mo', 'yy', 'yyyy', and you may use multiple formats at once, for example: 'hh:mm:ss'
      * @returns The formatted time
      */
-    formatTime(time, format) {
+    static formatTime(time, format) {
         if (format === undefined)
             return `${time}`;
         format = format.toLowerCase();
@@ -87,12 +84,17 @@ class Timer {
         if (format.includes("ms")) {
             let tmp = Math.floor(time);
             if (tmp < 100)
-                tmp = "00" + tmp;
-            else if (tmp < 10)
                 tmp = "0" + tmp;
+            else if (tmp < 10)
+                tmp = "00" + tmp;
+            else if (tmp < 1)
+                tmp = "000";
             format = format.replace("ms", tmp);
         }
         return format;
+    }
+    formatTime(time, format) {
+        return Timer.formatTime(time, format);
     }
     // Works fine, you should only provide a string with a number and a unit(ex: 1s, 1m, 1h, 1d, 1w, 1mo, 1y)
     /**
@@ -101,7 +103,7 @@ class Timer {
      * @throws {Error} If the time string is not in the correct format
      * @returns The time converted to ms
      */
-    toMs(time) {
+    static toMs(time) {
         try {
             if (typeof time === "number") {
                 return time;
@@ -143,6 +145,9 @@ class Timer {
         }
         return 0;
     }
+    toMs(time) {
+        return Timer.toMs(time);
+    }
     /**
      * Create a new Timer with a duration
      * @constructor
@@ -156,7 +161,6 @@ class Timer {
         this.paused = true;
         this.callbacks = [];
         this._timeline = [];
-        this.specialEventsRegistry = [];
         _Timer_currentTimeout.set(this, -1);
         _Timer_specialEvents.set(this, {
             start: [],
@@ -191,7 +195,7 @@ class Timer {
         this.beginTime = Date.now();
     }
     /**
-     * Add a duration to the running time of the timer, or removes it if the duration is negative
+     * Add a duration to the running time of the timer, or removes it if the provided duration is negative
      * @param duration - The duration to add to the running time of the timer, in ms
      */
     addRunningTime(duration) {
