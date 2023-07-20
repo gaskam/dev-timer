@@ -35,7 +35,7 @@ export class Timer {
      * @param format - The format, accepted formats are: 'ms', 'ss', 'mm', 'hh', 'dd', 'ww', 'mo', 'yy', 'yyyy', and you may use multiple formats at once, for example: 'hh:mm:ss'
      * @returns The formatted time
      */
-    formatTime(time: number, format?: string): string {
+    static formatTime(time: number, format?: string): string {
         if (format === undefined) return `${time}`;
         format = format.toLowerCase();
         if (format === "ms") return `${time}`;
@@ -95,6 +95,10 @@ export class Timer {
         return format;
     }
 
+    formatTime(time: number, format?: string): string {
+        return Timer.formatTime(time, format);
+    }
+
     // Works fine, you should only provide a string with a number and a unit(ex: 1s, 1m, 1h, 1d, 1w, 1mo, 1y)
     /**
      * Ensures that the time is in ms, and if not, converts it to ms
@@ -102,7 +106,7 @@ export class Timer {
      * @throws {Error} If the time string is not in the correct format
      * @returns The time converted to ms
      */
-    toMs(time: number | string): number {
+    static toMs(time: number | string): number {
         try {
             if (typeof time === "number") {
                 return time;
@@ -128,6 +132,10 @@ export class Timer {
             throw `Timer.js: unable to convert time to ms: ${e}`;
         }
         return 0;
+    }
+
+    toMs(time: number | string): number {
+        return Timer.toMs(time);
     }
 
     /**
