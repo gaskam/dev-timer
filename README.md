@@ -1,16 +1,13 @@
 # Dev-Timer
 
-<div style="text-align: center;">
+<div style="align: center;">
 
 ![npm](https://img.shields.io/npm/v/dev-timer)
 ![npm](https://img.shields.io/npm/dw/dev-timer)
-<!-- ![GitHub top language](https://img.shields.io/github/languages/top/gaskam-com/dev-timer) -->
+
 ![npm bundle size](https://img.shields.io/bundlephobia/min/dev-timer)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/gaskam-com/dev-timer/main)
 ![Static Badge](https://img.shields.io/badge/JS%20%2B%20TS-%20100%25-blue)
-<!-- ![GitHub issues](https://img.shields.io/github/issues/gaskam-com/dev-timer)
-![GitHub Repo stars](https://img.shields.io/github/stars/gaskam-com/dev-timer)
-![NPM](https://img.shields.io/npm/l/dev-timer) -->
 
 </div>
 
