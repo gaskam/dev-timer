@@ -1,34 +1,54 @@
 {
-  "name": "dev-timer",
-  "version": "0.4.0",
-  "description": "Super interval timer that can handle multiple timers simulteanously",
-  "main": "dist/Timer.js",
-  "types": "dist/Timer.d.ts",
-  "scripts": {
-    "build": "tsc --module commonjs --outDir ./dist && tsc && npx typedoc --plugin typedoc-plugin-markdown --out docs src/Timer.ts",
-    "release:major": "npm version major --no-git-tag-version",
-    "release:minor": "npm version minor --no-git-tag-version",
-    "release:patch": "npm version patch --no-git-tag-version"
-  },
-  "files": [
-    "/dist",
-    "/ES"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gaskam-com/dev-timer"
-  },
-  "keywords": [
-    "timer",
-    "js",
-    "timerjs",
-    "interval"
-  ],
-  "author": "Gaskam",
-  "license": "BSD-3-Clause",
-  "devDependencies": {
-    "typedoc": "^0.24.8",
-    "typedoc-plugin-markdown": "^3.15.3",
-    "typescript": "^5.1.6"
-  }
+    "name": "dev-timer",
+    "version": "0.4.0",
+    "description": "Super interval timer that can handle multiple timers simulteanously",
+    "main": "dist/Timer.js",
+    "types": "dist/Timer.d.ts",
+    "scripts": {
+        "build": "tsc --module commonjs --outDir ./dist && tsc && npx typedoc --plugin typedoc-plugin-markdown --out docs src/Timer.ts",
+        "release:major": "npm version major --no-git-tag-version",
+        "release:minor": "npm version minor --no-git-tag-version",
+        "release:patch": "npm version patch --no-git-tag-version"
+    },
+    "files": [
+        "/dist",
+        "/ES"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gaskam-com/dev-timer"
+    },
+    "keywords": [
+        "timer",
+        "js",
+        "timerjs",
+        "interval"
+    ],
+    "author": "Gaskam",
+    "license": "BSD-3-Clause",
+    "devDependencies": {
+        "typedoc": "^0.24.8",
+        "typedoc-plugin-markdown": "^3.15.3",
+        "typescript": "^5.1.6"
+    },
+    "autoupdate": {
+        "source": "npm",
+        "target": "dev-timer",
+        "fileMap": [
+            {
+                "basePath": "dist",
+                "files": [
+                    "*.js",
+                    "*.d.ts"
+                ]
+            },
+            {
+                "basePath": "ES",
+                "files": [
+                    "*.js",
+                    "*.d.ts"
+                ]
+            }
+        ]
+    }
 }
