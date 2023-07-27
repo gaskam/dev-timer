@@ -423,4 +423,26 @@ export class Timer {
         });
         this.dispatchSpecialEvent("end");
     }
+
+    export(): string {
+        let data: any = {};
+        data.beginTime = this.beginTime;
+        data.duration = this.duration;
+        data.pauseAmount = this.pauseAmount;
+        data.pauseBegin = this.pauseBegin;
+        data.paused = this.paused;
+
+        return btoa(JSON.stringify(data));
+    }
+
+    static import(data: string): Timer {
+        let tmp = new Timer(0);
+        let parsed = JSON.parse(atob(data));
+        tmp.beginTime = parsed.beginTime;
+        tmp.duration = parsed.duration;
+        tmp.pauseAmount = parsed.pauseAmount;
+        tmp.pauseBegin = parsed.pauseBegin;
+        tmp.paused = parsed.paused;
+        return tmp;
+    }
 }
