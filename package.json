@@ -43,10 +43,10 @@
                 ]
             },
             {
-                "basePath": "ES",
+                "basePath": "",
                 "files": [
-                    "*.js",
-                    "*.d.ts"
+                    "ES/*.js",
+                    "ES/*.d.ts"
                 ]
             }
         ]
