@@ -27,7 +27,7 @@
     "author": "Gaskam",
     "license": "BSD-3-Clause",
     "devDependencies": {
-        "typedoc": "^0.25.0",
+        "typedoc": "^0.26.2",
         "typedoc-plugin-markdown": "^4.0.1",
         "typescript": "^5.1.6"
     },
