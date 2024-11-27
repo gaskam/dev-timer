@@ -8,7 +8,7 @@ dev-timer / [Exports](modules.md)
 ![npm](https://img.shields.io/npm/dw/dev-timer)
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/dev-timer)
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/gaskam-com/dev-timer/main)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/gaskam/dev-timer/main)
 ![Static Badge](https://img.shields.io/badge/JS%20%2B%20TS-%20100%25-blue)
 
 </div>
